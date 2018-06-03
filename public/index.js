@@ -21,7 +21,8 @@ function removeTable(){
  * @param {string} houseId- the house number 
  */
 function fetchAndShowHouseInfo(houseId) {
-    fetchDataFromServer(`http://localhost:3000/homes/${houseId}/data`).then(rooms => {
+    const port = 3000;
+    fetchDataFromServer(`http://localhost:${port}/homes/${houseId}/data`).then(rooms => {
         removeHouseNumber();
         addHouseNumber(houseId);
         removeTable();
